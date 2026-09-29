@@ -1,0 +1,5 @@
+{
+    "failing_limit": 0.85,
+    "warning_limit": 0.75,
+    "unit": "bytes"
+}

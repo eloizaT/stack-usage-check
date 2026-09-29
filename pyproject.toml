@@ -1,0 +1,44 @@
+[tool.poetry.scripts]
+stack-usage-check = "stack_usage_check.cli.cli:main"
+
+[tool.poetry]
+name = "stack_usage_check"
+version = "0.0.0"
+description = "Generates stack usage report"
+authors = ["ET"]
+readme = "README.md"
+packages = [
+    {include = "stack_usage_check", from = "src"},
+]
+
+[tool.poetry-dynamic-versioning]
+enable = true
+vcs = "git"
+dirty = true
+style = "pep440"
+bump = true
+pattern = "default-unprefixed"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+tox = "^4.5.1"
+
+[tool.poetry.group.dev.dependencies]
+build = "^0.8.0"
+pre-commit = "^3.2.1"
+
+[tool.poetry.group.test.dependencies]
+coverage = "^6.5.0"
+
+[tool.poetry.group.docs.dependencies]
+sphinx = "^6.1.3"
+sphinx-rtd-theme = "^1.2.0"
+sphinx-tabs = "^3.4.1"
+
+[tool.poetry.group.lint.dependencies]
+flake8 = "^5.0.4"
+black = "^22.10.0"
+
+[build-system]
+requires = ["poetry-core>=1.2.0", "poetry-dynamic-versioning>=0.22.0"]
+build-backend = "poetry_dynamic_versioning.backend"

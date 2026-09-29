@@ -1,0 +1,1 @@
+from stack_usage_check._version import __version__
